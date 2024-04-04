@@ -9,8 +9,10 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await fetch('https://restcountries.com/v3.1/all');
+        // console.log(response);
         const data = await response.json();
         setCountries(data);
+        console.log(data);
       } catch (error) {
         setError(error.message);
         console.error('Error fetching data:', error);
